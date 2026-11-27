@@ -13,6 +13,7 @@ config_version=5
 config/name="Leyendas del Monte"
 config/description="RPG 2D con estética GBA y criaturas del folclore argentino."
 config/features=PackedStringArray("4.7", "GL Compatibility")
+run/main_scene="res://scenes/world/test_export.tscn"
 
 [display]
 
