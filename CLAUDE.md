@@ -49,16 +49,16 @@ tests/     pruebas con GUT
 
 ## Roadmap
 
-- [ ] H0 Preparación: repo, proyecto Godot, export de prueba a Android
+- [x] H0 Preparación: repo, proyecto Godot, export de prueba a Android
   - [x] Repo y proyecto Godot (PR #1)
-  - [ ] Export de prueba a Android (pendiente para cerrar H0)
+  - [x] Export de prueba a Android
 - [ ] H1 Mundo: movimiento en grilla, TileMapLayer con colisiones, cámara, D-pad táctil
 - [ ] H2 Pueblo vivo: NPCs y diálogos, transiciones entre mapas, encuentros (-> demo web)
 - [ ] H3 Combate: datos, combate por turnos, tipos, experiencia, tests GUT
 - [ ] H4 Pactos: payé, equipo, curación en el rancho, menú y guardado
 - [ ] H5 Cierre: jefe, audio, pulido (-> release v0.1 con APK)
 
-**Hito actual: H0**
+**Hito actual: H1**
 
 ## Cómo trabajar en este repo
 
