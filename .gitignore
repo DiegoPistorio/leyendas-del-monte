@@ -1,0 +1,27 @@
+# Godot
+.godot/
+/android/
+*.translation
+
+# Secretos (keystores, claves)
+*.keystore
+*.jks
+*.pem
+*.p12
+*.key
+*.idsig
+.env
+.env.*
+
+# Builds
+/build/
+*.apk
+*.aab
+
+# Claude Code (se versiona .claude/agents/)
+.claude/settings.local.json
+
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+.vscode/

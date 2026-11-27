@@ -1,0 +1,11 @@
+# Normalizar fin de línea a LF en todos los archivos de texto
+* text=auto eol=lf
+
+# Binarios
+*.png binary
+*.jpg binary
+*.wav binary
+*.ogg binary
+*.mp3 binary
+*.ttf binary
+*.otf binary
