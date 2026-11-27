@@ -34,6 +34,8 @@ func move_in_direction(direction: Vector2i) -> void:
 
 
 func set_camera_limits(used_rect: Rect2i) -> void:
+	if used_rect.size == Vector2i.ZERO:
+		return
 	camera.limit_left = used_rect.position.x * tile_size
 	camera.limit_top = used_rect.position.y * tile_size
 	camera.limit_right = used_rect.end.x * tile_size
