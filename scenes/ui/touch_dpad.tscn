@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/touch_dpad.gd" id="1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_btn"]
+size = Vector2(14, 14)
+
+[node name="TouchDpad" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1")
+
+[node name="Up" type="TouchScreenButton" parent="."]
+position = Vector2(30, 114)
+shape = SubResource("RectangleShape2D_btn")
+
+[node name="UpVisual" type="Polygon2D" parent="Up"]
+color = Color(0.9, 0.9, 0.9, 0.6)
+polygon = PackedVector2Array(-7, -7, 7, -7, 7, 7, -7, 7)
+
+[node name="Down" type="TouchScreenButton" parent="."]
+position = Vector2(30, 146)
+shape = SubResource("RectangleShape2D_btn")
+
+[node name="DownVisual" type="Polygon2D" parent="Down"]
+color = Color(0.9, 0.9, 0.9, 0.6)
+polygon = PackedVector2Array(-7, -7, 7, -7, 7, 7, -7, 7)
+
+[node name="Left" type="TouchScreenButton" parent="."]
+position = Vector2(14, 130)
+shape = SubResource("RectangleShape2D_btn")
+
+[node name="LeftVisual" type="Polygon2D" parent="Left"]
+color = Color(0.9, 0.9, 0.9, 0.6)
+polygon = PackedVector2Array(-7, -7, 7, -7, 7, 7, -7, 7)
+
+[node name="Right" type="TouchScreenButton" parent="."]
+position = Vector2(46, 130)
+shape = SubResource("RectangleShape2D_btn")
+
+[node name="RightVisual" type="Polygon2D" parent="Right"]
+color = Color(0.9, 0.9, 0.9, 0.6)
+polygon = PackedVector2Array(-7, -7, 7, -7, 7, 7, -7, 7)
+
+[connection signal="pressed" from="Up" to="." method="_on_up_pressed"]
+[connection signal="pressed" from="Down" to="." method="_on_down_pressed"]
+[connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="Right" to="." method="_on_right_pressed"]
