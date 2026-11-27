@@ -23,6 +23,7 @@ window/size/window_width_override=960
 window/size/window_height_override=640
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
+window/handheld/orientation="landscape"
 
 [input_devices]
 
