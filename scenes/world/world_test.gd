@@ -10,19 +10,22 @@ extends Node2D
 func _ready() -> void:
 	touch_dpad.move_requested.connect(player.move_in_direction)
 	player.set_camera_limits(tile_map_layer.get_used_rect())
-	_generate_placeholder_tileset_texture()
+	_generate_placeholder_tileset_textures()
 
 
 ## TODO(temporal): borrar esta función una vez creado el TileSet a mano en el editor.
-## Genera una textura de 2 tiles (pasto caminable / piedra que bloquea) para no
-## depender de dibujar un PNG a mano en un editor de imágenes externo.
-func _generate_placeholder_tileset_texture() -> void:
-	var path: String = "res://assets/tilesets/placeholder_tiles.png"
+## Genera dos texturas de 16x16 (pasto caminable / piedra que bloquea), una por
+## tile, para no depender de dibujar un PNG a mano en un editor de imágenes externo.
+func _generate_placeholder_tileset_textures() -> void:
+	_generate_tile_texture("res://assets/tilesets/tile_grass.png", Color(0.3, 0.55, 0.25))
+	_generate_tile_texture("res://assets/tilesets/tile_rock.png", Color(0.45, 0.42, 0.4))
+
+
+func _generate_tile_texture(path: String, color: Color) -> void:
 	if FileAccess.file_exists(path):
 		return
-	var image: Image = Image.create(32, 16, false, Image.FORMAT_RGBA8)
-	image.fill_rect(Rect2i(0, 0, 16, 16), Color(0.3, 0.55, 0.25))
-	image.fill_rect(Rect2i(16, 0, 16, 16), Color(0.45, 0.42, 0.4))
+	var image: Image = Image.create(16, 16, false, Image.FORMAT_RGBA8)
+	image.fill(color)
 	DirAccess.make_dir_recursive_absolute("res://assets/tilesets")
 	image.save_png(path)
-	print("Placeholder tileset generado en ", path)
+	print("Placeholder tile generado en ", path)
